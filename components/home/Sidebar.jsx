@@ -373,6 +373,22 @@ const Sidebar = () => {
                                 <div class="chat-message-list">
 
                                     <ul class="list-unstyled chat-list chat-user-list" id="favourite-users">
+                                        <li id="contact-id-1" data-name="favorite" class="active">
+                                            <a href="javascript: void(0);" class="unread-msg-user">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="chat-user-img online align-self-center me-2 ms-0">
+                                                        <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-xs" alt="" />
+                                                        <span class="user-status"></span>
+                                                    </div>
+                                                    <div class="overflow-hidden">
+                                                        <p class="text-truncate mb-0">Bella Cote</p>
+                                                    </div>
+                                                    <div class="ms-auto">
+                                                        <span class="badge bg-dark-subtle text-reset rounded p-1">18</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
                                         <li></li>
                                     </ul>
                                 </div>
