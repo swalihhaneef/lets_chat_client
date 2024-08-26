@@ -1,6 +1,18 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
+import { Tooltip } from '@mui/material'
+import {
+    Dropdown,
+    DropdownTrigger,
+    DropdownMenu,
+    DropdownSection,
+    DropdownItem
+} from "@nextui-org/dropdown";
 
 const Sidebar = () => {
+
+    const [activeTab, setActiveTab] = useState(1)
+
     return (
         <>
             <div class="side-menu flex-lg-column">
@@ -18,45 +30,90 @@ const Sidebar = () => {
                     </a>
                 </div>
                 <div class="flex-lg-column my-0 sidemenu-navigation">
-                    <ul class="nav nav-pills side-menu-nav" role="tablist">
-                        <li class="nav-item d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-bs-container=".sidemenu-navigation" title="Profile">
-                            <a class="nav-link" id="pills-user-tab" data-bs-toggle="pill" href="#pills-user" role="tab">
-                                <i class='bx bx-user-circle'></i>
-                            </a>
+                    <ul class="nav nav-pills side-menu-nav" >
+                        <li
+                            onClick={() => setActiveTab(1)}
+                            class="nav-item d-none d-lg-block" >
+                            <Tooltip title="Profile" placement='right' arrow>
+                                <a class="nav-link" >
+                                    <i class='bx bx-user-circle'></i>
+                                </a>
+                            </Tooltip>
                         </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-bs-container=".sidemenu-navigation" title="Chats">
-                            <a class="nav-link active" id="pills-chat-tab" data-bs-toggle="pill" href="#pills-chat" role="tab">
-                                <i class='bx bx-conversation'></i>
-                            </a>
+                        <li
+                            onClick={() => setActiveTab(2)}
+                            class="nav-item">
+                            <Tooltip title="Chats" placement='right' arrow>
+                                <a class="nav-link active" id="pills-chat-tab" >
+                                    <i class='bx bx-conversation'></i>
+                                </a>
+                            </Tooltip>
                         </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-bs-container=".sidemenu-navigation" title="Contacts">
-                            <a class="nav-link" id="pills-contacts-tab" data-bs-toggle="pill" href="#pills-contacts" role="tab">
-                                <i class='bx bxs-user-detail'></i>
-                            </a>
+                        <li
+                            onClick={() => setActiveTab(3)}
+                            class="nav-item" >
+                            <Tooltip title="Contacts" placement='right' arrow>
+                                <a class="nav-link" id="pills-contacts-tab" >
+                                    <i class='bx bxs-user-detail'></i>
+                                </a>
+                            </Tooltip>
                         </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-bs-container=".sidemenu-navigation" title="Calls">
-                            <a class="nav-link" id="pills-calls-tab" data-bs-toggle="pill" href="#pills-calls" role="tab">
-                                <i class='bx bx-phone-call'></i>
-                            </a>
+                        <li
+                            onClick={() => setActiveTab(4)}
+                            class="nav-item" >
+                            <Tooltip title="Calls" placement='right' arrow>
+                                <a class="nav-link" id="pills-calls-tab" >
+                                    <i class='bx bx-phone-call'></i>
+                                </a>
+                            </Tooltip>
                         </li>
-                        <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-bs-container=".sidemenu-navigation" title="Bookmark">
-                            <a class="nav-link" id="pills-bookmark-tab" data-bs-toggle="pill" href="#pills-bookmark" role="tab">
-                                <i class='bx bx-bookmarks'></i>
-                            </a>
+                        <li
+                            onClick={() => setActiveTab(5)}
+                            class="nav-item" >
+                            <Tooltip title="Bookmark" placement='right' arrow>
+                                <a class="nav-link" id="pills-bookmark-tab" >
+                                    <i class='bx bx-bookmarks'></i>
+                                </a>
+                            </Tooltip>
                         </li>
-                        <li class="nav-item d-none d-lg-block" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-container=".sidemenu-navigation" data-bs-trigger="hover" title="Settings">
-                            <a class="nav-link" id="pills-setting-tab" data-bs-toggle="pill" href="#pills-setting" role="tab">
-                                <i class='bx bx-cog'></i>
-                            </a>
+                        <li
+                            onClick={() => setActiveTab(6)}
+                            class="nav-item d-none d-lg-block" >
+                            <Tooltip title="Settings" placement='right' arrow>
+                                <a class="nav-link" id="pills-setting-tab" >
+                                    <i class='bx bx-cog'></i>
+                                </a>
+                            </Tooltip>
                         </li>
-                        <li class="nav-item mt-auto">
-                            <a class="nav-link light-dark" href="#" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-container=".sidemenu-navigation" data-bs-html="true" title="<span class='light-mode'>Light</span> <span class='dark-mode'>Dark</span> Mode">
-                                <i class='bx bx-moon'></i>
-                            </a>
+                        <li
+                            onClick={() => setActiveTab(7)}
+                            class="nav-item mt-auto">
+                            <Tooltip title="Dark theme" placement='right' arrow>
+                                <a class="nav-link light-dark" >
+                                    <i class='bx bx-moon'></i>
+                                </a>
+                            </Tooltip>
                         </li>
                         <li class="nav-item dropdown profile-user-dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1-1.jpg" alt="" class="profile-user rounded-circle" />
+                            <Dropdown>
+                                <DropdownTrigger>
+                                    <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="/images/users/avatar-1-1.jpg" alt="" class="profile-user rounded-circle" />
+                                    </a>
+                                </DropdownTrigger>
+                                <DropdownMenu class="dropdown-menu d-block" aria-label="Static Actions">
+                                    <DropdownItem class="dropdown-item d-flex align-items-center justify-content-between" key="new">New file</DropdownItem>
+                                    <DropdownItem key="copy">Copy link</DropdownItem>
+                                    <DropdownItem key="edit">Edit file</DropdownItem>
+                                    <DropdownItem key="delete" className="text-danger" color="danger">
+                                        Delete file
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </Dropdown>
+                        </li>
+                        <li class="nav-item dropdown profile-user-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true   ">
+                                <img src="/images/users/avatar-1-1.jpg" alt="" class="profile-user rounded-circle" />
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" id="pills-user-tab" data-bs-toggle="pill" href="#pills-user" role="tab">Profile <i class="bx bx-user-circle text-muted ms-1"></i></a>
@@ -73,7 +130,8 @@ const Sidebar = () => {
 
                 <div class="tab-content">
                     {/* <!-- Start Profile tab-pane --> */}
-                    <div class="tab-pane" id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
+
+                    <div class={`tab-pane ${activeTab == 1 && "show active"} `} id="pills-user" role="tabpanel" aria-labelledby="pills-user-tab">
                         {/* <!-- Start profile content --> */}
                         <div>
                             <div class="user-profile-img">
@@ -335,10 +393,11 @@ const Sidebar = () => {
                         </div>
                         {/* <!-- End profile content --> */}
                     </div>
+
                     {/* <!-- End Profile tab-pane --> */}
 
                     {/* <!-- Start chats tab-pane --> */}
-                    <div class="tab-pane show active" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
+                    <div class={`tab-pane ${activeTab == 2 && "show active"} `} id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
                         {/* <!-- Start chats content --> */}
                         <div>
                             <div class="px-4 pt-4">
@@ -666,7 +725,7 @@ const Sidebar = () => {
                     {/* <!-- End chats tab-pane --> */}
 
                     {/* <!-- Start contacts tab-pane --> */}
-                    <div class="tab-pane" id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
+                    <div class={`tab-pane ${activeTab == 3 && "show active"} `} id="pills-contacts" role="tabpanel" aria-labelledby="pills-contacts-tab">
                         {/* <!-- Start Contact content --> */}
                         <div>
                             <div class="px-4 pt-4">
@@ -705,7 +764,7 @@ const Sidebar = () => {
                     {/* <!-- End contacts tab-pane --> */}
 
                     {/* <!-- Start calls tab-pane --> */}
-                    <div class="tab-pane" id="pills-calls" role="tabpanel" aria-labelledby="pills-calls-tab">
+                    <div class={`tab-pane ${activeTab == 4 && "show active"} `} id="pills-calls" role="tabpanel" aria-labelledby="pills-calls-tab">
                         {/* <!-- Start Contact content --> */}
                         <div>
                             <div class="px-4 pt-4">
@@ -730,7 +789,7 @@ const Sidebar = () => {
                     {/* <!-- End calls tab-pane --> */}
 
                     {/* <!-- Start bookmark tab-pane --> */}
-                    <div class="tab-pane" id="pills-bookmark" role="tabpanel" aria-labelledby="pills-bookmark-tab">
+                    <div class={`tab-pane ${activeTab == 5 && "show active"} `} id="pills-bookmark" role="tabpanel" aria-labelledby="pills-bookmark-tab">
                         {/* <!-- Start Contact content --> */}
                         <div>
                             <div class="px-4 pt-4">
@@ -1106,7 +1165,7 @@ const Sidebar = () => {
                     {/* <!-- End bookmark tab-pane --> */}
 
                     {/* <!-- Start settings tab-pane --> */}
-                    <div class="tab-pane" id="pills-setting" role="tabpanel" aria-labelledby="pills-setting-tab">
+                    <div class={`tab-pane ${activeTab == 6 && "show active"} `} id="pills-setting" role="tabpanel" aria-labelledby="pills-setting-tab">
                         {/* <!-- Start Settings content --> */}
                         <div>
                             <div class="user-profile-img">

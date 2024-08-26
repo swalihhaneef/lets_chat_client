@@ -2165,7 +2165,8 @@ body[data-bs-theme=dark] .chat-conversation .right .conversation-list .ctext-wra
 }
 
 .user-profile-desc {
-    height: calc(100vh - 285px)
+    height: calc(100vh - 285px);
+    overflow-y:auto;
 }
 
 @media (max-width:991.98px) {

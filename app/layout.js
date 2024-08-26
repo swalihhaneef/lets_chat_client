@@ -9,7 +9,9 @@ import "@/styles/bootstrap.min.css"
 import "@/styles/icons.min-1.css"
 import "@/styles/glightbox.min-1.css"
 import "@/styles/bootstrap.min2.css"
-import Head from "next/head";
+// import ClientLayout from "@/components/ClientLayout";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +23,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+        {/* <ClientLayout /> */}
+      </body>
     </html>
   );
 }
