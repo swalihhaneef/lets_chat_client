@@ -6,7 +6,7 @@ const RightSideProfile = () => {
             <div class="user-profile-sidebar d-block">
                 <div class="p-3 border-bottom">
                     <div class="user-profile-img">
-                        <img src="assets/images/users/avatar-2-1.jpg" class="profile-img rounded" alt="" />
+                        <img src="/images/users/avatar-2-1.jpg" class="profile-img rounded" alt="" />
                         <div class="overlay-content rounded">
                             <div class="user-chat-nav p-2">
                                 <div class="d-flex w-100">
@@ -193,22 +193,22 @@ const RightSideProfile = () => {
                         <div class="profile-media-img">
                             <div class="media-img-list">
                                 <a href="#">
-                                    <img src="assets/images/small/img-1-1.jpg" alt="media img" class="img-fluid" />
+                                    <img src="/images/small/img-1-1.jpg" alt="media img" class="img-fluid" />
                                 </a>
                             </div>
                             <div class="media-img-list">
                                 <a href="#">
-                                    <img src="assets/images/small/img-2-1.jpg" alt="media img" class="img-fluid" />
+                                    <img src="/images/small/img-2-1.jpg" alt="media img" class="img-fluid" />
                                 </a>
                             </div>
                             <div class="media-img-list">
                                 <a href="#">
-                                    <img src="assets/images/small/img-3-1.jpg" alt="media img" class="img-fluid" />
+                                    <img src="/images/small/img-3-1.jpg" alt="media img" class="img-fluid" />
                                 </a>
                             </div>
                             <div class="media-img-list">
                                 <a href="#">
-                                    <img src="assets/images/small/img-4-1.jpg" alt="media img" class="img-fluid" />
+                                    <img src="/images/small/img-4-1.jpg" alt="media img" class="img-fluid" />
                                     <div class="bg-overlay">+ 15</div>
                                 </a>
                             </div>

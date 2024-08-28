@@ -1,13 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { Tooltip } from '@mui/material'
-import {
-    Dropdown,
-    DropdownTrigger,
-    DropdownMenu,
-    DropdownSection,
-    DropdownItem
-} from "@nextui-org/dropdown";
+
 
 const Sidebar = () => {
 
@@ -95,23 +89,6 @@ const Sidebar = () => {
                             </Tooltip>
                         </li>
                         <li class="nav-item dropdown profile-user-dropdown">
-                            <Dropdown>
-                                <DropdownTrigger>
-                                    <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="/images/users/avatar-1-1.jpg" alt="" class="profile-user rounded-circle" />
-                                    </a>
-                                </DropdownTrigger>
-                                <DropdownMenu class="dropdown-menu d-block" aria-label="Static Actions">
-                                    <DropdownItem class="dropdown-item d-flex align-items-center justify-content-between" key="new">New file</DropdownItem>
-                                    <DropdownItem key="copy">Copy link</DropdownItem>
-                                    <DropdownItem key="edit">Edit file</DropdownItem>
-                                    <DropdownItem key="delete" className="text-danger" color="danger">
-                                        Delete file
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </Dropdown>
-                        </li>
-                        <li class="nav-item dropdown profile-user-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true   ">
                                 <img src="/images/users/avatar-1-1.jpg" alt="" class="profile-user rounded-circle" />
                             </a>
@@ -135,7 +112,7 @@ const Sidebar = () => {
                         {/* <!-- Start profile content --> */}
                         <div>
                             <div class="user-profile-img">
-                                <img src="assets/images/small/img-4-1.jpg" class="profile-img" style={{ height: '160px' }} alt="" />
+                                <img src="/images/small/img-4-1.jpg" class="profile-img" style={{ height: '160px' }} alt="" />
                                 <div class="overlay-content">
                                     <div>
                                         <div class="user-chat-nav p-2 ps-3">
@@ -165,7 +142,7 @@ const Sidebar = () => {
 
                             <div class="text-center p-3 p-lg-4 border-bottom pt-2 pt-lg-2 mt-n5 position-relative">
                                 <div class="mb-lg-3 mb-2">
-                                    <img src="assets/images/users/avatar-1-1.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="" />
+                                    <img src="/images/users/avatar-1-1.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="" />
                                 </div>
 
                                 <h5 class="font-size-16 mb-1 text-truncate">Adam Zampa</h5>
@@ -221,17 +198,17 @@ const Sidebar = () => {
                                     <div class="profile-media-img">
                                         <div class="media-img-list">
                                             <a href="#">
-                                                <img src="assets/images/small/img-1-1.jpg" alt="media img" class="img-fluid" />
+                                                <img src="/images/small/img-1-1.jpg" alt="media img" class="img-fluid" />
                                             </a>
                                         </div>
                                         <div class="media-img-list">
                                             <a href="#">
-                                                <img src="assets/images/small/img-2-1.jpg" alt="media img" class="img-fluid" />
+                                                <img src="/images/small/img-2-1.jpg" alt="media img" class="img-fluid" />
                                             </a>
                                         </div>
                                         <div class="media-img-list">
                                             <a href="#">
-                                                <img src="assets/images/small/img-4-1.jpg" alt="media img" class="img-fluid" />
+                                                <img src="/images/small/img-4-1.jpg" alt="media img" class="img-fluid" />
                                                 <div class="bg-overlay">+ 15</div>
                                             </a>
                                         </div>
@@ -436,7 +413,7 @@ const Sidebar = () => {
                                             <a href="javascript: void(0);" class="unread-msg-user">
                                                 <div class="d-flex align-items-center">
                                                     <div class="chat-user-img online align-self-center me-2 ms-0">
-                                                        <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-xs" alt="" />
+                                                        <img src="/images/users/avatar-2-1.jpg" class="rounded-circle avatar-xs" alt="" />
                                                         <span class="user-status"></span>
                                                     </div>
                                                     <div class="overflow-hidden">
@@ -470,7 +447,22 @@ const Sidebar = () => {
                                 <div class="chat-message-list">
 
                                     <ul class="list-unstyled chat-list chat-user-list" id="usersList">
-                                        <li></li>
+                                        <li id="contact-id-1" data-name="favorite" >
+                                            <a href="javascript: void(0);" class="unread-msg-user">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="chat-user-img online align-self-center me-2 ms-0">
+                                                        <img src="/images/users/avatar-2-1.jpg" class="rounded-circle avatar-xs" alt="" />
+                                                        <span class="user-status"></span>
+                                                    </div>
+                                                    <div class="overflow-hidden">
+                                                        <p class="text-truncate mb-0">Bella Cote</p>
+                                                    </div>
+                                                    <div class="ms-auto">
+                                                        <span class="badge bg-dark-subtle text-reset rounded p-1">18</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -492,7 +484,22 @@ const Sidebar = () => {
                                 <div class="chat-message-list">
 
                                     <ul class="list-unstyled chat-list chat-user-list mb-3" id="channelList">
-                                        <li></li>
+                                        <li id="contact-id-1" data-name="favorite" >
+                                            <a href="javascript: void(0);" class="unread-msg-user">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="chat-user-img online align-self-center me-2 ms-0">
+                                                        <img src="/images/users/avatar-2-1.jpg" class="rounded-circle avatar-xs" alt="" />
+                                                        <span class="user-status"></span>
+                                                    </div>
+                                                    <div class="overflow-hidden">
+                                                        <p class="text-truncate mb-0">Bella Cote</p>
+                                                    </div>
+                                                    <div class="ms-auto">
+                                                        <span class="badge bg-dark-subtle text-reset rounded p-1">18</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 {/* <!-- End chat-message-list --> */}
@@ -755,6 +762,114 @@ const Sidebar = () => {
 
                             <div class="chat-message-list chat-group-list" data-simplebar="">
                                 <div class="sort-contact">
+                                    <div>
+                                        <div class="mt-3">
+                                            <div class="">
+                                                <div class="contact-list-title">A</div>
+                                                <ul class="list-unstyled contact-list">
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <div class="avatar-xs">
+                                                                    <span class="avatar-title rounded-circle font-size-10 text-uppercase bg-pink">AL</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <h5 class="font-size-14 m-0">Alvarez Luna</h5>
+                                                            </div><div class="flex-shrink-0">
+                                                                <div class="dropdown">
+                                                                    <a aria-haspopup="true" class="text-mute" aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded align-middle"></i>
+                                                                    </a>
+                                                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-end dropdown-menu" data-bs-popper="static">
+                                                                        <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                            Edit <i class="bx bx-pencil ms-2 text-muted"></i>
+                                                                        </a>
+                                                                        <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                            Block <i class="bx bx-block ms-2 text-muted"></i>
+                                                                        </a>
+                                                                        <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                            Remove <i class="bx bx-trash ms-2 text-muted"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="mt-3">
+                                                <div class="contact-list-title">C</div>
+                                                <ul class="list-unstyled contact-list">
+                                                    <li><div class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0 me-2"><div class="avatar-xs">
+                                                            <img src="/static/media/avatar-1.9c8e605558cece65b06c.jpg" alt="" class="img-fluid rounded-circle" />
+                                                        </div>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h5 class="font-size-14 m-0">Carla Serrano</h5>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <div class="dropdown">
+                                                                <a aria-haspopup="true" class="text-mute" aria-expanded="false"><i class="bx bx-dots-vertical-rounded align-middle"></i></a>
+                                                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-end dropdown-menu" data-bs-popper="static">
+                                                                    <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                        Edit <i class="bx bx-pencil ms-2 text-muted"></i>
+                                                                    </a>
+                                                                    <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                        Block <i class="bx bx-block ms-2 text-muted"></i>
+                                                                    </a>
+                                                                    <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                        Remove <i class="bx bx-trash ms-2 text-muted"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="mt-3">
+                                                <div class="contact-list-title">D</div>
+                                                <ul class="list-unstyled contact-list">
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <div class="avatar-xs">
+                                                                    <span class="avatar-title rounded-circle font-size-10 text-uppercase bg-primary">DV</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <h5 class="font-size-14 m-0">Dean Vargas</h5>
+                                                            </div>
+                                                            <div class="flex-shrink-0">
+                                                                <div class="dropdown">
+                                                                    <a aria-haspopup="true" class="text-mute" aria-expanded="false">
+                                                                        <i class="bx bx-dots-vertical-rounded align-middle"></i>
+                                                                    </a>
+                                                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-end dropdown-menu" data-bs-popper="static">
+                                                                        <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                            Edit <i class="bx bx-pencil ms-2 text-muted"></i>
+                                                                        </a>
+                                                                        <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                            Block <i class="bx bx-block ms-2 text-muted"></i>
+                                                                        </a>
+                                                                        <a href="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">
+                                                                            Remove <i class="bx bx-trash ms-2 text-muted"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             {/* <!-- end contact lists --> */}
@@ -778,8 +893,93 @@ const Sidebar = () => {
 
                             {/* <!-- Start contact lists --> */}
                             <div class="chat-message-list chat-call-list" data-simplebar="">
-                                <ul class="list-unstyled chat-list" id="callList">
-
+                                <ul class="list-unstyled chat-list">
+                                    <li><div class="d-flex align-items-center">
+                                        <div class="chat-user-img flex-shrink-0 me-2">
+                                            <img src="/static/media/avatar-1.9c8e605558cece65b06c.jpg" class="rounded-circle avatar-xs" alt="" />
+                                        </div>
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-truncate mb-0">Burgess Burt</p>
+                                            <div class="text-muted font-size-12 text-truncate">
+                                                <i class="ri-arrow-left-down-fill text-success align-bottom me-1"></i>
+                                                5 May, 2016, 06:216:21 AM
+                                            </div>
+                                        </div>
+                                        <div class="flex-shrink-0 ms-3">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div>
+                                                    <h5 class="mb-0 font-size-12 text-muted">5:37</h5>
+                                                </div>
+                                                <div>
+                                                    <button type="button" class="p-0 font-size-20 stretched-link btn btn-link">
+                                                        <i class="bx bx-video align-middle"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center">
+                                            <div class="chat-user-img flex-shrink-0 me-2">
+                                                <img src="/static/media/avatar-2.81ae8bcabb014e1f71b8.jpg" class="rounded-circle avatar-xs" alt="" />
+                                            </div>
+                                            <div class="flex-grow-1 overflow-hidden">
+                                                <p class="text-truncate mb-0">Bryant Shaffer</p>
+                                                <div class="text-muted font-size-12 text-truncate">
+                                                    <i class="ri-arrow-left-down-fill text-success align-bottom me-1"></i>17 May, 2014, 10:2210:22 AM
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div>
+                                                        <h5 class="mb-0 font-size-12 text-muted">5:24</h5>
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="p-0 font-size-20 stretched-link btn btn-link">
+                                                            <i class="bx bxs-phone-call align-middle"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex align-items-center">
+                                            <div class="chat-user-img flex-shrink-0 me-2">
+                                                <div class="avatar-group">
+                                                    <div class="avatar-group-item">
+                                                        <div class="avatar-xs">
+                                                            <span class="avatar-title rounded-circle text-uppercase text-white bg-danger">SB</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="avatar-group-item">
+                                                        <div class="avatar-xs">
+                                                            <div class="avatar-title rounded-circle bg-light text-primary">4+</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 overflow-hidden">
+                                                <p class="text-truncate mb-0">Curtis Spears</p>
+                                                <div class="text-muted font-size-12 text-truncate">
+                                                    <i class="ri-arrow-right-up-fill text-danger align-bottom me-1"></i>27 Nov, 2020, 04:114:11 AM
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-3">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div>
+                                                        <h5 class="mb-0 font-size-12 text-muted">2:43</h5>
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="p-0 font-size-20 stretched-link btn btn-link">
+                                                            <i class="bx bx-video align-middle"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             {/* <!-- end contact lists --> */}
@@ -1169,7 +1369,7 @@ const Sidebar = () => {
                         {/* <!-- Start Settings content --> */}
                         <div>
                             <div class="user-profile-img">
-                                <img src="assets/images/small/img-4-1.jpg" class="profile-img profile-foreground-img" style={{ height: "160px" }} alt="" />
+                                <img src="/images/small/img-4-1.jpg" class="profile-img profile-foreground-img" style={{ height: "160px" }} alt="" />
                                 <div class="overlay-content">
                                     <div>
                                         <div class="user-chat-nav p-3">
@@ -1196,7 +1396,7 @@ const Sidebar = () => {
 
                             <div class="text-center p-3 p-lg-4 border-bottom pt-2 pt-lg-2 mt-n5 position-relative">
                                 <div class="mb-3 profile-user">
-                                    <img src="assets/images/users/avatar-1-1.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
+                                    <img src="/images/users/avatar-1-1.jpg" class="rounded-circle avatar-lg img-thumbnail user-profile-image" alt="user-profile-image" />
                                     <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
                                         <input id="profile-img-file-input" type="file" class="profile-img-file-input" />
                                         <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">

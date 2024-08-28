@@ -14,7 +14,7 @@ const Chat = () => {
                                 <div class="flex-grow-1 overflow-hidden">
                                     <div class="d-flex align-items-center">
                                         <div class="flex-shrink-0 chat-user-img online user-own-img align-self-center me-3 ms-0">
-                                            <img src="assets/images/users/avatar-2-1.jpg" class="rounded-circle avatar-sm" alt="" />
+                                            <img src="/images/users/avatar-2-1.jpg" class="rounded-circle avatar-sm" alt="" />
                                             <span class="user-status"></span>
                                         </div>
                                         <div class="flex-grow-1 overflow-hidden">
@@ -94,7 +94,224 @@ const Chat = () => {
                 {/* <!-- start chat conversation --> */}
 
                 <div class="chat-conversation p-3 p-lg-4 " id="chat-conversation" data-simplebar="">
-                    <ul class="list-unstyled chat-conversation-list" id="users-conversation">
+                    <ul class="list-unstyled chat-conversation-list" id="chat-conversation-list">
+                        <li class="chat-list">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-4.474927d6a33a7b8cde52.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Good morning 😊</p>
+                                        </div>
+                                        <div class="align-self-start message-box-drop dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static">
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></button>
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Copy <i class="bx bx-copy text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Mark as Unread <i class="bx bx-message-error text-muted ms-2"></i></button>
+                                                <button type="button" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash text-muted ms-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name">Marguerite Campbell<small class="text-muted mb-0 ms-2">11:26pm</small></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list right">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-1.9c8e605558cece65b06c.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Good morning, How are you? What about our next meeting?</p>
+                                        </div>
+                                        <div class="align-self-start message-box-drop dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static">
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></button>
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Copy <i class="bx bx-copy text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Mark as Unread <i class="bx bx-message-error text-muted ms-2"></i></button>
+                                                <button type="button" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash text-muted ms-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name"><span class="me-1 text-success"><i class="bx bx-check-double bx-check"></i></span><small class="text-muted mb-0 me-2">11:26pm</small>You</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-4.474927d6a33a7b8cde52.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Yeah everything is fine. Our next meeting tomorrow at 10.00 AM</p>
+                                        </div>
+                                        <div class="align-self-start message-box-drop dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static">
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></button>
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Copy <i class="bx bx-copy text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Mark as Unread <i class="bx bx-message-error text-muted ms-2"></i></button>
+                                                <button type="button" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash text-muted ms-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name">Marguerite Campbell<small class="text-muted mb-0 ms-2">11:26pm</small></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-4.474927d6a33a7b8cde52.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Hey, I'm going to meet a friend of mine at the department store. I have to buy some presents for my parents 🎁</p>
+                                        </div>
+                                        <div class="align-self-start message-box-drop dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static">
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></button>
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Copy <i class="bx bx-copy text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Mark as Unread <i class="bx bx-message-error text-muted ms-2"></i></button>
+                                                <button type="button" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash text-muted ms-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name">Marguerite Campbell<small class="text-muted mb-0 ms-2">11:26pm</small></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list right">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-1.9c8e605558cece65b06c.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">Wow that's great</p>
+                                        </div>
+                                        <div class="align-self-start message-box-drop dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static">
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></button>
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Copy <i class="bx bx-copy text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Mark as Unread <i class="bx bx-message-error text-muted ms-2"></i></button>
+                                                <button type="button" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash text-muted ms-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name"><span class="me-1 text-success"><i class="bx bx-check-double bx-check"></i></span><small class="text-muted mb-0 me-2">11:26pm</small>You</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-4.474927d6a33a7b8cde52.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="message-img mb-0">
+                                            <div class="message-img-list">
+                                                <div>
+                                                    <a class="popup-img d-inline-block" href="/dashboard">
+                                                        <img src="/static/media/img-1.94735bdcb4171caaa01e.jpg" alt="" class="rounded border" />
+                                                    </a>
+                                                </div>
+                                                <div class="message-img-link">
+                                                    <ul class="list-inline mb-0">
+                                                        <li color="none" class="list-inline-item dropdown dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static"><a href="/static/media/img-1.94735bdcb4171caaa01e.jpg" download="" tabindex="0" role="menuitem" class="dropdown-item d-flex align-items-center justify-content-between dropdown-item">Download <i class="bx bx-download ms-2 text-muted"></i></a>
+                                                                <a
+                                                                    href="#" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></a><a href="#" data-bs-toggle="modal" data-bs-target=".forwardModal" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></a>
+                                                                <a
+                                                                    href="#" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></a><a href="#" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash ms-2 text-muted"></i></a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="message-img-list">
+                                                <div>
+                                                    <a class="popup-img d-inline-block" href="/dashboard">
+                                                        <img src="/static/media/img-2.7f759d38502a81e71815.jpg" alt="" class="rounded border" />
+                                                    </a>
+                                                </div>
+                                                <div class="message-img-link">
+                                                    <ul class="list-inline mb-0">
+                                                        <li color="none" class="list-inline-item dropdown dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="bx bx-dots-horizontal-rounded"></i></a>
+                                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static"><a href="/static/media/img-2.7f759d38502a81e71815.jpg" download="" tabindex="0" role="menuitem" class="dropdown-item d-flex align-items-center justify-content-between dropdown-item">Download <i class="bx bx-download ms-2 text-muted"></i></a>
+                                                                <a
+                                                                    href="#" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></a><a href="#" data-bs-toggle="modal" data-bs-target=".forwardModal" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></a>
+                                                                <a
+                                                                    href="#" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></a><a href="#" tabindex="0" role="menuitem" class=" d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash ms-2 text-muted"></i></a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name">Marguerite Campbell<small class="text-muted mb-0 ms-2">11:26pm</small></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-list right">
+                            <div class="conversation-list">
+                                <div class="chat-avatar">
+                                    <img src="/static/media/avatar-1.9c8e605558cece65b06c.jpg" alt="" />
+                                </div>
+                                <div class="user-chat-content">
+                                    <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <div class="p-3 border-primary border rounded-3">
+                                                <div class="d-flex align-items-center attached-file">
+                                                    <div class="flex-shrink-0 avatar-sm me-3 ms-0 attached-file-avatar">
+                                                        <div class="avatar-title bg-primary-subtle text-primary rounded-circle font-size-20"><i class="ri-attachment-2"></i></div>
+                                                    </div>
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <div class="text-start">
+                                                            <h5 class="font-size-14 mb-1">design-phase-1-approved.pdf</h5>
+                                                            <p class="text-muted text-truncate font-size-13 mb-0">12.5 MB</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-shrink-0 ms-4">
+                                                        <div class="d-flex gap-2 font-size-20 d-flex align-items-start">
+                                                            <div><a href="#" class="text-muted" download=""><i class="bx bxs-download"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="align-self-start message-box-drop dropdown"><a role="button" aria-haspopup="true" class="btn btn-toggle" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                                            <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu" data-bs-popper="static">
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Reply <i class="bx bx-share ms-2 text-muted"></i></button>
+                                                <button type="button" to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Forward <i class="bx bx-share-alt ms-2 text-muted"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Copy <i class="bx bx-copy text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Bookmark <i class="bx bx-bookmarks text-muted ms-2"></i></button>
+                                                <button to="#" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between dropdown-item">Mark as Unread <i class="bx bx-message-error text-muted ms-2"></i></button>
+                                                <button type="button" tabindex="0" role="menuitem" class="d-flex align-items-center justify-content-between delete-item dropdown-item">Delete <i class="bx bx-trash text-muted ms-2"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="conversation-name"><span class="me-1 text-success"><i class="bx bx-check-double bx-check"></i></span><small class="text-muted mb-0 me-2">11:26pm</small>You</div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
