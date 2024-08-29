@@ -315,9 +315,7 @@ const Chat = () => {
                     </ul>
                 </div>
 
-                <div class="alert alert-warning alert-dismissible copyclipboard-alert px-4 fade show " id="copyClipBoard" role="alert">
-                    message copied
-                </div>
+                
 
 
                 {/* <!-- end chat conversation end --> */}

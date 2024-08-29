@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import { Tooltip } from '@mui/material'
-
-
+import { Accordion } from 'react-bootstrap'
+import Dropdown from '../DropDown'
 const Sidebar = () => {
 
     const [activeTab, setActiveTab] = useState(1)
@@ -29,7 +29,7 @@ const Sidebar = () => {
                             onClick={() => setActiveTab(1)}
                             class="nav-item d-none d-lg-block" >
                             <Tooltip title="Profile" placement='right' arrow>
-                                <a class="nav-link" >
+                                <a class={`nav-link ${activeTab == 1 && "active"}`} >
                                     <i class='bx bx-user-circle'></i>
                                 </a>
                             </Tooltip>
@@ -38,7 +38,7 @@ const Sidebar = () => {
                             onClick={() => setActiveTab(2)}
                             class="nav-item">
                             <Tooltip title="Chats" placement='right' arrow>
-                                <a class="nav-link active" id="pills-chat-tab" >
+                                <a class={`nav-link ${activeTab == 2 && "active"}`}  >
                                     <i class='bx bx-conversation'></i>
                                 </a>
                             </Tooltip>
@@ -47,7 +47,7 @@ const Sidebar = () => {
                             onClick={() => setActiveTab(3)}
                             class="nav-item" >
                             <Tooltip title="Contacts" placement='right' arrow>
-                                <a class="nav-link" id="pills-contacts-tab" >
+                                <a class={`nav-link ${activeTab == 3 && "active"}`} id="pills-contacts-tab" >
                                     <i class='bx bxs-user-detail'></i>
                                 </a>
                             </Tooltip>
@@ -56,39 +56,65 @@ const Sidebar = () => {
                             onClick={() => setActiveTab(4)}
                             class="nav-item" >
                             <Tooltip title="Calls" placement='right' arrow>
-                                <a class="nav-link" id="pills-calls-tab" >
+                                <a class={`nav-link ${activeTab == 4 && "active"}`} id="pills-calls-tab" >
                                     <i class='bx bx-phone-call'></i>
                                 </a>
                             </Tooltip>
                         </li>
-                        <li
+                        {/* <li
                             onClick={() => setActiveTab(5)}
                             class="nav-item" >
                             <Tooltip title="Bookmark" placement='right' arrow>
-                                <a class="nav-link" id="pills-bookmark-tab" >
+                                <a class={`nav-link ${activeTab == 1 &&  "active"}`} id="pills-bookmark-tab" >
                                     <i class='bx bx-bookmarks'></i>
                                 </a>
                             </Tooltip>
-                        </li>
+                        </li> */}
                         <li
                             onClick={() => setActiveTab(6)}
                             class="nav-item d-none d-lg-block" >
                             <Tooltip title="Settings" placement='right' arrow>
-                                <a class="nav-link" id="pills-setting-tab" >
+                                <a class={`nav-link ${activeTab == 6 && "active"}`} id="pills-setting-tab" >
                                     <i class='bx bx-cog'></i>
                                 </a>
                             </Tooltip>
                         </li>
                         <li
                             onClick={() => setActiveTab(7)}
-                            class="nav-item mt-auto">
+                            class="nav-item ">
                             <Tooltip title="Dark theme" placement='right' arrow>
                                 <a class="nav-link light-dark" >
                                     <i class='bx bx-moon'></i>
                                 </a>
                             </Tooltip>
                         </li>
-                        <li class="nav-item dropdown profile-user-dropdown">
+                        <li>
+                            <Dropdown
+                                trigger={
+                                    <a className="nav-link dropdown-toggle" href="#" role="button">
+                                        <img src="/images/users/avatar-1-1.jpg" alt="" className="profile-user rounded-circle" />
+                                    </a>
+                                }
+                                menu={
+                                    <>
+                                        <a className="dropdown-item d-flex align-items-center justify-content-between" id="pills-user-tab" href="#pills-user" role="tab">
+                                            Profile <i className="bx bx-user-circle text-muted ms-1"></i>
+                                        </a>
+                                        <a className="dropdown-item d-flex align-items-center justify-content-between" id="pills-setting-tab" href="#pills-setting" role="tab">
+                                            Setting <i className="bx bx-cog text-muted ms-1"></i>
+                                        </a>
+                                        <a className="dropdown-item d-flex align-items-center justify-content-between" href="auth-changepassword-1.html">
+                                            Change Password <i className="bx bx-lock-open text-muted ms-1"></i>
+                                        </a>
+                                        <div className="dropdown-divider"></div>
+                                        <a className="dropdown-item d-flex align-items-center justify-content-between" href="auth-logout-1.html">
+                                            Log out <i className="bx bx-log-out-circle text-muted ms-1"></i>
+                                        </a>
+                                    </>
+                                }
+                            />
+                        </li>
+                        {/* <li class="nav-item dropdown profile-user-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true   ">
                                 <img src="/images/users/avatar-1-1.jpg" alt="" class="profile-user rounded-circle" />
                             </a>
@@ -99,7 +125,7 @@ const Sidebar = () => {
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" href="auth-logout-1.html">Log out <i class="bx bx-log-out-circle text-muted ms-1"></i></a>
                             </div>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
@@ -123,14 +149,21 @@ const Sidebar = () => {
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <div class="dropdown">
-                                                        <button class="btn nav-btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class='bx bx-dots-vertical-rounded'></i>
-                                                        </button>
+                                                        <Dropdown
+                                                            trigger={<button class="btn nav-btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class='bx bx-dots-vertical-rounded'></i>
+                                                            </button>}
+                                                            menu={
+                                                                <>
+                                                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Info <i class="bx bx-info-circle ms-2 text-muted"></i></a>
+                                                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Setting <i class="bx bx-cog text-muted ms-2"></i></a>
+                                                                    <div class="dropdown-divider"></div>
+                                                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Help <i class="bx bx-help-circle ms-2 text-muted"></i></a>
+                                                                </>
+                                                            } />
+
                                                         <div class="dropdown-menu dropdown-menu-end">
-                                                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Info <i class="bx bx-info-circle ms-2 text-muted"></i></a>
-                                                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Setting <i class="bx bx-cog text-muted ms-2"></i></a>
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Help <i class="bx bx-help-circle ms-2 text-muted"></i></a>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1428,296 +1461,271 @@ const Sidebar = () => {
                             {/* <!-- Start User profile description --> */}
                             <div class="user-setting" data-simplebar="">
                                 <div id="settingprofile" class="accordion accordion-flush">
-                                    <div class="accordion-item">
-                                        <div class="accordion-header" id="headerpersonalinfo">
-                                            <button class="accordion-button font-size-14 fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#personalinfo" aria-expanded="true" aria-controls="personalinfo">
-                                                <i class="bx bxs-user text-muted me-3"></i> Personal Info
-                                            </button>
-                                        </div>
-                                        <div id="personalinfo" class="accordion-collapse collapse show" aria-labelledby="headerpersonalinfo" data-bs-parent="#settingprofile">
-                                            <div class="accordion-body">
-                                                <div class="float-end">
-                                                    <button type="button" class="btn btn-soft-primary btn-sm"><i class="bx bxs-pencil align-middle"></i></button>
+                                    <Accordion defaultActiveKey="0">
+                                        <Accordion.Item eventKey='0'>
+                                            <Accordion.Header><i class="bx bxs-user text-muted me-3"></i> Personal Info</Accordion.Header>
+                                            <Accordion.Body>
+                                                <div class="accordion-body">
+                                                    <div class="float-end">
+                                                        <button type="button" class="btn btn-soft-primary btn-sm"><i class="bx bxs-pencil align-middle"></i></button>
+                                                    </div>
+
+                                                    <div>
+                                                        <p class="text-muted mb-1">Name</p>
+                                                        <h5 class="font-size-14">Adam Zampa</h5>
+                                                    </div>
+
+                                                    <div class="mt-4">
+                                                        <p class="text-muted mb-1">Email</p>
+                                                        <h5 class="font-size-14">adc@123.com</h5>
+                                                    </div>
+
+                                                    <div class="mt-4">
+                                                        <p class="text-muted mb-1">Location</p>
+                                                        <h5 class="font-size-14 mb-0">California, USA</h5>
+                                                    </div>
                                                 </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey='1'>
+                                            <Accordion.Header>Themes</Accordion.Header>
+                                            <Accordion.Body>
+                                                <div id="collapsethemes" class="accordion-collapse collapse" aria-labelledby="headerthemes" data-bs-parent="#settingprofile">
+                                                    <div class="accordion-body">
+                                                        <div>
+                                                            <h5 class="mb-3 font-size-11 text-muted text-uppercase">Choose Theme Color :</h5>
+                                                            <div class="d-flex align-items-center flex-wrap gap-2 theme-btn-list theme-color-list">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="0" name="bgcolor-radio" id="bgcolor-radio1" />
+                                                                    <label class="form-check-label avatar-xs" for="bgcolor-radio1">
+                                                                        <span class="avatar-title bg-primary-custom rounded-circle theme-btn bgcolor-radio1"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="1" name="bgcolor-radio" id="bgcolor-radio2" />
+                                                                    <label class="form-check-label avatar-xs" for="bgcolor-radio2">
+                                                                        <span class="avatar-title bg-info rounded-circle theme-btn bgcolor-radio2"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="2" name="bgcolor-radio" id="bgcolor-radio4" />
+                                                                    <label class="form-check-label avatar-xs" for="bgcolor-radio4">
+                                                                        <span class="avatar-title bg-purple rounded-circle theme-btn bgcolor-radio4"></span>
+                                                                    </label>
+                                                                </div>
 
-                                                <div>
-                                                    <p class="text-muted mb-1">Name</p>
-                                                    <h5 class="font-size-14">Adam Zampa</h5>
-                                                </div>
-
-                                                <div class="mt-4">
-                                                    <p class="text-muted mb-1">Email</p>
-                                                    <h5 class="font-size-14">adc@123.com</h5>
-                                                </div>
-
-                                                <div class="mt-4">
-                                                    <p class="text-muted mb-1">Location</p>
-                                                    <h5 class="font-size-14 mb-0">California, USA</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!-- end personal info card --> */}
-
-                                    <div class="accordion-item">
-                                        <div class="accordion-header" id="headerthemes">
-                                            <button class="accordion-button font-size-14 fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethemes" aria-expanded="false" aria-controls="collapsethemes">
-                                                <i class="bx bxs-adjust-alt text-muted me-3"></i> Themes
-                                            </button>
-                                        </div>
-                                        <div id="collapsethemes" class="accordion-collapse collapse" aria-labelledby="headerthemes" data-bs-parent="#settingprofile">
-                                            <div class="accordion-body">
-                                                <div>
-                                                    <h5 class="mb-3 font-size-11 text-muted text-uppercase">Choose Theme Color :</h5>
-                                                    <div class="d-flex align-items-center flex-wrap gap-2 theme-btn-list theme-color-list">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="0" name="bgcolor-radio" id="bgcolor-radio1" />
-                                                            <label class="form-check-label avatar-xs" for="bgcolor-radio1">
-                                                                <span class="avatar-title bg-primary-custom rounded-circle theme-btn bgcolor-radio1"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="1" name="bgcolor-radio" id="bgcolor-radio2" />
-                                                            <label class="form-check-label avatar-xs" for="bgcolor-radio2">
-                                                                <span class="avatar-title bg-info rounded-circle theme-btn bgcolor-radio2"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="2" name="bgcolor-radio" id="bgcolor-radio4" />
-                                                            <label class="form-check-label avatar-xs" for="bgcolor-radio4">
-                                                                <span class="avatar-title bg-purple rounded-circle theme-btn bgcolor-radio4"></span>
-                                                            </label>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="3" name="bgcolor-radio" id="bgcolor-radio5" />
+                                                                    <label class="form-check-label avatar-xs" for="bgcolor-radio5">
+                                                                        <span class="avatar-title bg-pink rounded-circle theme-btn bgcolor-radio5"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="4" name="bgcolor-radio" id="bgcolor-radio6" />
+                                                                    <label class="form-check-label avatar-xs" for="bgcolor-radio6">
+                                                                        <span class="avatar-title bg-danger rounded-circle theme-btn bgcolor-radio6"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="5" name="bgcolor-radio" id="bgcolor-radio7" />
+                                                                    <label class="form-check-label avatar-xs" for="bgcolor-radio7">
+                                                                        <span class="avatar-title bg-secondary rounded-circle theme-btn bgcolor-radio7"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-color" type="radio" value="6" name="bgcolor-radio" id="bgcolor-radio8" checked="" />
+                                                                    <label class="form-check-label avatar-xs light-background" for="bgcolor-radio8">
+                                                                        <span class="avatar-title bg-light rounded-circle theme-btn bgcolor-radio8"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
                                                         </div>
 
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="3" name="bgcolor-radio" id="bgcolor-radio5" />
-                                                            <label class="form-check-label avatar-xs" for="bgcolor-radio5">
-                                                                <span class="avatar-title bg-pink rounded-circle theme-btn bgcolor-radio5"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="4" name="bgcolor-radio" id="bgcolor-radio6" />
-                                                            <label class="form-check-label avatar-xs" for="bgcolor-radio6">
-                                                                <span class="avatar-title bg-danger rounded-circle theme-btn bgcolor-radio6"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="5" name="bgcolor-radio" id="bgcolor-radio7" />
-                                                            <label class="form-check-label avatar-xs" for="bgcolor-radio7">
-                                                                <span class="avatar-title bg-secondary rounded-circle theme-btn bgcolor-radio7"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-color" type="radio" value="6" name="bgcolor-radio" id="bgcolor-radio8" checked="" />
-                                                            <label class="form-check-label avatar-xs light-background" for="bgcolor-radio8">
-                                                                <span class="avatar-title bg-light rounded-circle theme-btn bgcolor-radio8"></span>
-                                                            </label>
+                                                        <div class="mt-4 pt-2">
+                                                            <h5 class="mb-3 font-size-11 text-muted text-uppercase">Choose Theme Image :</h5>
+                                                            <div class="d-flex align-items-center flex-wrap gap-2 theme-btn-list theme-btn-list-img">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio1" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio1">
+                                                                        <span class="avatar-title bg-pattern-1 rounded-circle theme-btn bgimg-radio1"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio2" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio2">
+                                                                        <span class="avatar-title bg-pattern-2 rounded-circle theme-btn bgimg-radio2"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio3" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio3">
+                                                                        <span class="avatar-title bg-pattern-3 rounded-circle theme-btn bgimg-radio3"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio4" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio4">
+                                                                        <span class="avatar-title bg-pattern-4 rounded-circle theme-btn bgimg-radio4"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio5" checked="" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio5">
+                                                                        <span class="avatar-title bg-pattern-5 rounded-circle theme-btn bgimg-radio5"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio6" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio6">
+                                                                        <span class="avatar-title bg-pattern-6 rounded-circle theme-btn bgimg-radio6"></span>
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio7" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio7">
+                                                                        <span class="avatar-title bg-pattern-7 rounded-circle theme-btn bgimg-radio7"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio8" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio8">
+                                                                        <span class="avatar-title bg-pattern-8 rounded-circle theme-btn bgimg-radio8"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio9" />
+                                                                    <label class="form-check-label avatar-xs" for="bgimg-radio9">
+                                                                        <span class="avatar-title bg-pattern-9 rounded-circle theme-btn bgimg-radio9"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey='2'>
+                                            <Accordion.Header>Privacy</Accordion.Header>
+                                            <Accordion.Body>
+                                                <div class="accordion-body">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item py-3 px-0 pt-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-grow-1 overflow-hidden">
+                                                                    <h5 class="font-size-13 mb-0 text-truncate">Profile photo</h5>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <select class="form-select form-select-sm">
+                                                                        <option value="Everyone" selected="">Everyone</option>
+                                                                        <option value="Selected">Selected</option>
+                                                                        <option value="Nobody">Nobody</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item py-3 px-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-grow-1 overflow-hidden">
+                                                                    <h5 class="font-size-13 mb-0 text-truncate">Last seen</h5>
 
-                                                <div class="mt-4 pt-2">
-                                                    <h5 class="mb-3 font-size-11 text-muted text-uppercase">Choose Theme Image :</h5>
-                                                    <div class="d-flex align-items-center flex-wrap gap-2 theme-btn-list theme-btn-list-img">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio1" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio1">
-                                                                <span class="avatar-title bg-pattern-1 rounded-circle theme-btn bgimg-radio1"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio2" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio2">
-                                                                <span class="avatar-title bg-pattern-2 rounded-circle theme-btn bgimg-radio2"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio3" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio3">
-                                                                <span class="avatar-title bg-pattern-3 rounded-circle theme-btn bgimg-radio3"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio4" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio4">
-                                                                <span class="avatar-title bg-pattern-4 rounded-circle theme-btn bgimg-radio4"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio5" checked="" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio5">
-                                                                <span class="avatar-title bg-pattern-5 rounded-circle theme-btn bgimg-radio5"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio6" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio6">
-                                                                <span class="avatar-title bg-pattern-6 rounded-circle theme-btn bgimg-radio6"></span>
-                                                            </label>
-                                                        </div>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div class="form-check form-switch">
+                                                                        <input type="checkbox" class="form-check-input" id="privacy-lastseenSwitch" checked="" />
+                                                                        <label class="form-check-label" for="privacy-lastseenSwitch"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item py-3 px-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-grow-1 overflow-hidden">
+                                                                    <h5 class="font-size-13 mb-0 text-truncate">Status</h5>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <select class="form-select form-select-sm">
+                                                                        <option value="Everyone" selected="">Everyone</option>
+                                                                        <option value="Selected">Selected</option>
+                                                                        <option value="Nobody">Nobody</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item py-3 px-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-grow-1 overflow-hidden">
+                                                                    <h5 class="font-size-13 mb-0 text-truncate">Read receipts</h5>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div class="form-check form-switch">
+                                                                        <input type="checkbox" class="form-check-input" id="privacy-readreceiptSwitch" checked="" />
+                                                                        <label class="form-check-label" for="privacy-readreceiptSwitch"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item py-3 px-0 pb-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-grow-1 overflow-hidden">
+                                                                    <h5 class="font-size-13 mb-0 text-truncate">Groups</h5>
 
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio7" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio7">
-                                                                <span class="avatar-title bg-pattern-7 rounded-circle theme-btn bgimg-radio7"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio8" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio8">
-                                                                <span class="avatar-title bg-pattern-8 rounded-circle theme-btn bgimg-radio8"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input theme-img" type="radio" name="bgimg-radio" id="bgimg-radio9" />
-                                                            <label class="form-check-label avatar-xs" for="bgimg-radio9">
-                                                                <span class="avatar-title bg-pattern-9 rounded-circle theme-btn bgimg-radio9"></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <select class="form-select form-select-sm">
+                                                                        <option value="Everyone" selected="">Everyone</option>
+                                                                        <option value="Selected">Selected</option>
+                                                                        <option value="Nobody">Nobody</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey='3'>
+                                            <Accordion.Header>Security</Accordion.Header>
+                                            <Accordion.Body>
+                                                <div class="accordion-body">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item p-0">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-grow-1 overflow-hidden">
+                                                                    <h5 class="font-size-13 mb-0 text-truncate">Show security notification</h5>
 
-                                    <div class="accordion-item">
-                                        <div class="accordion-header" id="privacy1">
-                                            <button class="accordion-button font-size-14 fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#privacy" aria-expanded="false" aria-controls="privacy">
-                                                <i class="bx bxs-lock text-muted me-3"></i>Privacy
-                                            </button>
-                                        </div>
-                                        <div id="privacy" class="accordion-collapse collapse" aria-labelledby="privacy1" data-bs-parent="#settingprofile">
-                                            <div class="accordion-body">
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item py-3 px-0 pt-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="font-size-13 mb-0 text-truncate">Profile photo</h5>
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <select class="form-select form-select-sm">
-                                                                    <option value="Everyone" selected="">Everyone</option>
-                                                                    <option value="Selected">Selected</option>
-                                                                    <option value="Nobody">Nobody</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item py-3 px-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="font-size-13 mb-0 text-truncate">Last seen</h5>
-
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <div class="form-check form-switch">
-                                                                    <input type="checkbox" class="form-check-input" id="privacy-lastseenSwitch" checked="" />
-                                                                    <label class="form-check-label" for="privacy-lastseenSwitch"></label>
+                                                                </div>
+                                                                <div class="flex-shrink-0 ms-2">
+                                                                    <div class="form-check form-switch">
+                                                                        <input type="checkbox" class="form-check-input" id="security-notificationswitch" />
+                                                                        <label class="form-check-label" for="security-notificationswitch"></label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item py-3 px-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="font-size-13 mb-0 text-truncate">Status</h5>
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <select class="form-select form-select-sm">
-                                                                    <option value="Everyone" selected="">Everyone</option>
-                                                                    <option value="Selected">Selected</option>
-                                                                    <option value="Nobody">Nobody</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item py-3 px-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="font-size-13 mb-0 text-truncate">Read receipts</h5>
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <div class="form-check form-switch">
-                                                                    <input type="checkbox" class="form-check-input" id="privacy-readreceiptSwitch" checked="" />
-                                                                    <label class="form-check-label" for="privacy-readreceiptSwitch"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="list-group-item py-3 px-0 pb-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="font-size-13 mb-0 text-truncate">Groups</h5>
-
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <select class="form-select form-select-sm">
-                                                                    <option value="Everyone" selected="">Everyone</option>
-                                                                    <option value="Selected">Selected</option>
-                                                                    <option value="Nobody">Nobody</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!-- end privacy card --> */}
-
-                                    <div class="accordion-item">
-                                        <div class="accordion-header" id="headersecurity">
-                                            <button class="accordion-button font-size-14 fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesecurity" aria-expanded="false" aria-controls="collapsesecurity">
-                                                <i class="bx bxs-check-shield text-muted me-3"></i> Security
-                                            </button>
-                                        </div>
-                                        <div id="collapsesecurity" class="accordion-collapse collapse" aria-labelledby="headersecurity" data-bs-parent="#settingprofile">
-                                            <div class="accordion-body">
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item p-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="font-size-13 mb-0 text-truncate">Show security notification</h5>
-
-                                                            </div>
-                                                            <div class="flex-shrink-0 ms-2">
-                                                                <div class="form-check form-switch">
-                                                                    <input type="checkbox" class="form-check-input" id="security-notificationswitch" />
-                                                                    <label class="form-check-label" for="security-notificationswitch"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* <!-- end security card --> */}
-
-
-
-                                    <div class="accordion-item">
-                                        <div class="accordion-header" id="headerhelp">
-                                            <button class="accordion-button font-size-14 fw-medium collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsehelp" aria-expanded="false" aria-controls="collapsehelp">
-                                                <i class="bx bxs-help-circle text-muted me-3"></i> Help
-                                            </button>
-                                        </div>
-                                        <div id="collapsehelp" class="accordion-collapse collapse" aria-labelledby="headerhelp" data-bs-parent="#settingprofile">
-                                            <div class="accordion-body">
-                                                <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item py-3 px-0 pt-0">
-                                                        <h5 class="font-size-13 mb-0"><a href="#" class="text-body d-block">FAQs</a></h5>
-                                                    </li>
-                                                    <li class="list-group-item py-3 px-0">
-                                                        <h5 class="font-size-13 mb-0"><a href="#" class="text-body d-block">Contact</a></h5>
-                                                    </li>
-                                                    <li class="list-group-item py-3 px-0 pb-0">
-                                                        <h5 class="font-size-13 mb-0"><a href="#" class="text-body d-block">Terms & Privacy policy</a></h5>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey='4'>
+                                            <Accordion.Header>Help</Accordion.Header>
+                                            <Accordion.Body>
+                                                <div class="accordion-body">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item py-3 px-0 pt-0">
+                                                            <h5 class="font-size-13 mb-0"><a href="#" class="text-body d-block">FAQs</a></h5>
+                                                        </li>
+                                                        <li class="list-group-item py-3 px-0">
+                                                            <h5 class="font-size-13 mb-0"><a href="#" class="text-body d-block">Contact</a></h5>
+                                                        </li>
+                                                        <li class="list-group-item py-3 px-0 pb-0">
+                                                            <h5 class="font-size-13 mb-0"><a href="#" class="text-body d-block">Terms & Privacy policy</a></h5>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                    </Accordion>
                                 </div>
                                 {/* <!-- end profile-setting-accordion --> */}
                             </div>

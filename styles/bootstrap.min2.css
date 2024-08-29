@@ -4515,6 +4515,16 @@ fieldset:disabled .btn {
         left: auto
     }
 }
+.dropdown-menu.bottom-start {
+    top: 100%;
+    left: 0;
+  }
+  
+  .dropdown-menu.top-start {
+    bottom: 100%;
+    left: 0;
+  }
+  
 
 .dropup .dropdown-menu[data-bs-popper] {
     top: auto;
@@ -4530,9 +4540,12 @@ fieldset:disabled .btn {
     margin-top: 0;
     margin-left: var(--bs-dropdown-spacer)
 }
-
+.dropdown-toggle::after{
+    content: none;
+}
 .dropend .dropdown-toggle::after {
-    vertical-align: 0
+    vertical-align: 0;
+    content: none;
 }
 
 .dropstart .dropdown-menu[data-bs-popper] {

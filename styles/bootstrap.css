@@ -1567,7 +1567,9 @@ body[data-bs-theme=dark] .dark-mode {
 }
 
 .chat-conversation {
-    height: calc(100vh - 94px)
+    height: calc(100vh - 94px);
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 @media (max-width:991.98px) {
@@ -2176,7 +2178,9 @@ body[data-bs-theme=dark] .chat-conversation .right .conversation-list .ctext-wra
 }
 
 .profile-desc {
-    height: calc(100vh - 285px)
+    height: calc(100vh - 285px);
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 @media (max-width:991.98px) {
@@ -2263,7 +2267,9 @@ body[data-bs-theme=dark] .chat-conversation .right .conversation-list .ctext-wra
 }
 
 .user-setting {
-    height: calc(100vh - 288px)
+    height: calc(100vh - 288px);
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 @media (max-width:991.98px) {
