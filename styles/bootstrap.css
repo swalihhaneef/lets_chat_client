@@ -2376,3 +2376,9 @@ body[data-bs-theme=dark] .chat-conversation .right .conversation-list .ctext-wra
 }
 
 /*# sourceMappingURL=app.min.css.map */
+
+.modal-main1{
+    position: relative;
+    z-index: 1050;
+    display: block;
+}

@@ -1,9 +1,17 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 
-const RightSideProfile = () => {
+const RightSideProfile = ({ sideProfile }) => {
+
+    const [open, setOpen] = useState(false)
+    useEffect(() => {
+        setOpen(sideProfile)
+    }, [sideProfile])
+
+    console.log('open', open)
     return (
         <>
-            <div class="user-profile-sidebar d-block">
+            <div class={`user-profile-sidebar ${open ? "d-block" : ""}`}>
                 <div class="p-3 border-bottom">
                     <div class="user-profile-img">
                         <img src="/images/users/avatar-2-1.jpg" class="profile-img rounded" alt="" />

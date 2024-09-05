@@ -24,7 +24,7 @@ const Sidebar = () => {
                     </a>
                 </div>
                 <div class="flex-lg-column my-0 sidemenu-navigation">
-                    <ul class="nav nav-pills side-menu-nav" >
+                    <ul class="nav  side-menu-nav" >
                         <li
                             onClick={() => setActiveTab(1)}
                             class="nav-item d-none d-lg-block" >

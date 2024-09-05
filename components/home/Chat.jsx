@@ -1,8 +1,22 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
+import AudioCallModal from '../modal/AudioCallModal'
+import VedioCallModal from '../modal/VedioCallModal'
+import Dropdown from '../DropDown'
 
-const Chat = () => {
+const Chat = ({ handleProfile }) => {
+
+    const [sideProfile, setSideProfile] = useState(false)
+    const [audiocallModal, setAudiocallModal] = useState(false)
+    const [VediocallModal, setVediocallModal] = useState(false)
+
+    useEffect(() => {
+        handleProfile()
+    }, [sideProfile])
     return (
         <>
+            <AudioCallModal isShow={audiocallModal} />
+            <VedioCallModal isShow={VediocallModal} />
             <div id="users-chat" class="position-relative">
                 <div class="p-3 p-lg-4 user-chat-topbar">
                     <div class="row align-items-center">
@@ -18,7 +32,10 @@ const Chat = () => {
                                             <span class="user-status"></span>
                                         </div>
                                         <div class="flex-grow-1 overflow-hidden">
-                                            <h6 class="text-truncate mb-0 font-size-18"><a href="#" class="user-profile-show text-reset">Bella Cote</a></h6>
+                                            <h6 class="text-truncate mb-0 font-size-18">
+                                                <a onClick={() => setSideProfile((prev) => !prev)}
+                                                    style={{ cursor: "pointer" }} class="user-profile-show text-reset">Bella Cote</a>
+                                            </h6>
                                             <p class="text-truncate text-muted mb-0"><small>Online</small></p>
                                         </div>
                                     </div>
@@ -27,7 +44,7 @@ const Chat = () => {
                         </div>
                         <div class="col-sm-8 col-4">
                             <ul class="list-inline user-chat-nav text-end mb-0">
-                                <li class="list-inline-item">
+                                {/* <li class="list-inline-item">
                                     <div class="dropdown">
                                         <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class='bx bx-search'></i>
@@ -38,38 +55,48 @@ const Chat = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </li>
+                                </li> */}
 
                                 <li class="list-inline-item d-none d-lg-inline-block me-2 ms-0">
-                                    <button type="button" class="btn nav-btn" data-bs-toggle="modal" data-bs-target=".audiocallModal">
+                                    <button type="button" class="btn nav-btn" onClick={() => setAudiocallModal(true)}>
                                         <i class='bx bxs-phone-call'></i>
                                     </button>
                                 </li>
 
                                 <li class="list-inline-item d-none d-lg-inline-block me-2 ms-0">
-                                    <button type="button" class="btn nav-btn" data-bs-toggle="modal" data-bs-target=".videocallModal">
+                                    <button type="button" class="btn nav-btn" onClick={() => setVediocallModal(true)}>
                                         <i class='bx bx-video'></i>
                                     </button>
                                 </li>
 
                                 <li class="list-inline-item d-none d-lg-inline-block me-2 ms-0">
-                                    <button type="button" class="btn nav-btn user-profile-show">
+                                    <button type="button" class="btn nav-btn user-profile-show" onClick={() => setSideProfile((prev) => !prev)}>
                                         <i class='bx bxs-info-circle'></i>
                                     </button>
                                 </li>
 
                                 <li class="list-inline-item">
+                                    <Dropdown
+                                        trigger={
+                                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class='bx bx-dots-vertical-rounded'></i>
+                                            </button>
+                                        }
+                                        menu={
+                                            <>
+                                                <a class="dropdown-item d-flex justify-content-between align-items-center d-lg-none user-profile-show" href="#">View Profile <i class="bx bx-user text-muted"></i></a>
+                                                <a class="dropdown-item d-flex justify-content-between align-items-center d-lg-none" href="#" data-bs-toggle="modal" data-bs-target=".audiocallModal">Audio <i class="bx bxs-phone-call text-muted"></i></a>
+                                                <a class="dropdown-item d-flex justify-content-between align-items-center d-lg-none" href="#" data-bs-toggle="modal" data-bs-target=".videocallModal">Video <i class="bx bx-video text-muted"></i></a>
+                                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Archive <i class="bx bx-archive text-muted"></i></a>
+                                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Muted <i class="bx bx-microphone-off text-muted"></i></a>
+                                                <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Delete <i class="bx bx-trash text-muted"></i></a>
+                                            </>
+                                        }
+                                    />
                                     <div class="dropdown">
-                                        <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class='bx bx-dots-vertical-rounded'></i>
-                                        </button>
+
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item d-flex justify-content-between align-items-center d-lg-none user-profile-show" href="#">View Profile <i class="bx bx-user text-muted"></i></a>
-                                            <a class="dropdown-item d-flex justify-content-between align-items-center d-lg-none" href="#" data-bs-toggle="modal" data-bs-target=".audiocallModal">Audio <i class="bx bxs-phone-call text-muted"></i></a>
-                                            <a class="dropdown-item d-flex justify-content-between align-items-center d-lg-none" href="#" data-bs-toggle="modal" data-bs-target=".videocallModal">Video <i class="bx bx-video text-muted"></i></a>
-                                            <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Archive <i class="bx bx-archive text-muted"></i></a>
-                                            <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Muted <i class="bx bx-microphone-off text-muted"></i></a>
-                                            <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Delete <i class="bx bx-trash text-muted"></i></a>
+
                                         </div>
                                     </div>
                                 </li>
@@ -315,7 +342,7 @@ const Chat = () => {
                     </ul>
                 </div>
 
-                
+
 
 
                 {/* <!-- end chat conversation end --> */}
